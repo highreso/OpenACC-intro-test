@@ -31,3 +31,15 @@ nvfortran --version
 
 ## 動作確認
 ### Fortran編
+[このコード](https://github.com/highreso/OpenACC-intro-test/blob/master/laplace2.f90)を`laplace2.f90`というファイル名で保存する。
+- with OpenACC
+```bash
+nvfortran -acc -O2 -Minfo=accel laplace2.f90 -o laplace2_with_OpenACC
+```
+で実行コードが出力されるので`./laplace2_with_OpenACC`で実行する
+
+- without OpenACC
+```bash
+nvfortran  laplace2.f90 -o laplace2_without_OpenACC
+```
+で実行コードが出力されるの`./laplace2_without_OpenACC`で実行できる
